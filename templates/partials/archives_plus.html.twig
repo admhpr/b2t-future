@@ -6,6 +6,7 @@
   <ul class="archive-plus">
 {% endif %}
 <h1 id="archives">Archives</h1>
+
 {# Iterate over all data #}
 {% for year ,months in archive_plus.data if months|length > 0  %}
   {# Set current year #}
