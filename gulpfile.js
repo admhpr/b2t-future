@@ -16,7 +16,7 @@ var // modules
     babel = require("gulp-babel");
 
 // development mode?
-devBuild = true;
+devBuild = false;
 // folders
 folder = {
     src: "src/",
