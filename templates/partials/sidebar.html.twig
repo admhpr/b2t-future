@@ -1,0 +1,94 @@
+<section id="sidebar">
+
+<!-- Intro -->
+    <section id="intro" role="banner">
+        <a href="{{ base_url_absolute }}" class="logo"><img src="{{ theme_url }}/images/ah_site_symbol.png" alt="{{ site.title|upper }}" /></a>
+        <header>
+            <h2>{{ site.title|upper }}</h2>
+            <p>answering my own questions one post at a time</p>
+        </header>
+        <p>Say Hello:</p>
+        <ul class="icons">
+            <li><a href="https://twitter.com/harps116"><i class="fab fa-twitter fa-2x"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/adam-harpur/"><i class="fab fa-linkedin  fa-2x"></i></a></li>
+
+        </ul>
+        <p>View my work:</p>
+        <ul class="icons">
+          <li><a href="https://github.com/harps116"><i class="fab fa-github-alt fa-2x"></i></a></li>
+          <li><a href="https://codepen.io/harps116/#"><i class="fab fa-codepen fa-2x"></i></a></li>
+          <li><a href="http://harps116.deviantart.com/"><i class="fab fa-deviantart fa-2x"></i></a></li>
+        </ul>
+
+    </section>
+
+    <section role="complementary">
+        <div class="mini-posts">
+
+        {% for p in page.find('/blog').children.order('hits', 'desc').slice(0, 2) %}
+        {% set bannerimage = p.media.images|first %}
+            {% if p.header.author %}
+            {% set pauthor =  p.header.author %}
+            {% else %}
+            {% set pauthor =  p.header.taxonomy.author[0] %}
+            {% endif %}
+            {% if pauthor %}
+            {% set pavatar = p.author|replace(' ', '-')|lower %}
+            {% endif %}
+
+            <!-- Mini Post -->
+                <article class="mini-post">
+                    <header>
+                        <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
+                        <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
+                        {% if pauthor %}
+                        <a href="{{ page.url }}" class="author"><img src="{{ theme_url }}/images/{{pavatar}}.jpg" alt="{{ pauthor }}" /></a>
+                        {% endif %}
+                    </header>
+                    <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(350,175).quality(60) }}</a>
+            </article>
+
+   {% endfor %}
+
+</div>
+</section>
+
+{% if config.plugins.archive_plus.enabled %}
+
+        {% include 'partials/archives_plus.html.twig' %}
+{% endif %}
+{% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
+    {% include 'partials/relatedpages.html.twig' %}
+{% endif %}
+{% if config.plugins.random.enabled %}
+<section role="complementary">
+    <ul class="posts">
+    {% for p in page.find('/blog').children.order('random').slice(0, 1) %}
+    {% set bannerimage = p.media.images|first %}
+    <li>
+        <article>
+           <header>
+         <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
+        <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
+        </header>
+        <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(64,64).quality(60) }}</a>
+      </article>
+    </li>
+   {% endfor %}
+   </ul>
+</section>
+{% endif %}
+        {% block footer %}
+                            <section class="blurb" role="complementary">
+                                <h2>A new art form</h2>
+                                <p>
+                                  Rearranging electrons into arithmetic or logical instructions to make computers convey a message to humans.
+                                </p>
+                                <ul class="actions">
+                                    <li><a href="/about" class="button">About Me</a></li>
+                                </ul>
+                            </section>
+
+
+		{% endblock %}
+    <br>

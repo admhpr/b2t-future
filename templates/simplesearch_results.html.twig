@@ -1,0 +1,28 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+<article class="box post post-excerpt simplesearch">
+    <header>
+    <div class="title">
+            <h2>Search Results</h2>
+            <li class="search" role="search">
+            <a class="fa fa-binoculars" href="#search">  Search </a>
+
+
+            <form id="search" method="get" action="#">
+              <input type="text" class="text" placeholder="Search" value="{{ query }}" data-search-input="{{ base_url_relative }}{{ config.plugins.simplesearch.route}}/query" />
+            </form>
+            </li>
+
+    </div>
+             <div class="meta">
+                                      <span class="published" >Found {{ search_results.count }} {{ 'result'|pluralize(search_results.count) }}</span>
+                                       <a class="fa fa-hand-o-down"> <span class="name">Search: {{ query }}</span></a>
+            </div>
+    </header>
+       {% for page in search_results %}
+        {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
+    {% endfor %}
+</article>
+
+{% endblock %}

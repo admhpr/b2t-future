@@ -1,0 +1,58 @@
+Arguments: 
+  /home/adam/.nvm/versions/node/v10.0.0/bin/node /home/adam/.yarn/bin/yarn.js install
+
+PATH: 
+  /home/adam/workspace/tools/scripts:/home/adam/.yarn/bin:/home/adam/.config/yarn/global/node_modules/.bin:/home/adam/workspace/tools/scripts:/home/adam/.yarn/bin:/home/adam/.config/yarn/global/node_modules/.bin:/home/adam/workspace/tools/scripts:/home/adam/.yarn/bin:/home/adam/.config/yarn/global/node_modules/.bin:/home/adam/.nvm/versions/node/v10.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/adam/scripts:/home/adam/scripts:/home/adam/scripts
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  10.0.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/adam/workspace/grav-personal/root/themes/b2t-future/package.json: Unexpected token } in JSON at position 791
+      at JSON.parse (<anonymous>)
+      at /home/adam/.yarn/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/home/adam/.yarn/lib/cli.js:98:30)
+      at /home/adam/.yarn/lib/cli.js:109:13
+
+npm manifest: 
+  {
+      "name": "B2t-Future frontend",
+      "version": "1.0.0",
+      "description": "",
+      "author": "Adam Harpur",
+      "license": "MIT",
+      "private": false,
+      "devDependencies": {
+          "autoprefixer": "^6.7.7",
+          "babel-core": "^6.26.0",
+          "babel-loader": "^7.1.2",
+          "babel-preset-es2015": "^6.24.1",
+          "css-mqpacker": "^5.0.1",
+          "cssnano": "^3.10.0",
+          "gulp": "^3.9.1",
+          "gulp-babel": "^7.0.0",
+          "gulp-concat": "^2.6.1",
+          "gulp-deporder": "^1.1.0",
+          "gulp-imagemin": "^3.2.0",
+          "gulp-newer": "^1.3.0",
+          "gulp-postcss": "^6.4.0",
+          "gulp-sass": "^3.1.0",
+          "gulp-strip-debug": "^1.1.0",
+          "gulp-uglify": "^2.1.2",
+          "gulp-wait": "^0.0.2",
+          "postcss-assets": "^4.1.0"
+      },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
