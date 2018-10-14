@@ -55,6 +55,7 @@
     {% endblock head%}
 </head>
     <body>
+        <div class="loader"></div>
         <div id="wrapper">
             {% block header %}
             <header id="header" role="banner">
@@ -118,6 +119,7 @@
                 });
             });
 
+
             /* When the user clicks on the button,
             toggle between hiding and showing the dropdown content */
             function dropdown() {
@@ -146,5 +148,9 @@
         {{ assets.js('bottom') }}
         {% endblock %}
     </body>
-
+    <script>
+         $(window).load(function() {
+                $(".loader").fadeOut("slow");
+            })
+    </script>
 </html>
