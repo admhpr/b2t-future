@@ -24,7 +24,7 @@
 
     <section role="complementary">
         <div class="mini-posts">
-
+        <h3 class="side-bar-title">Recent Posts</h3>
         {% for p in page.find('/blog').children.order('hits', 'desc').slice(0, 2) %}
         {% set bannerimage = p.media.images|first %}
             {% if p.header.author %}
