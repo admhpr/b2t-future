@@ -26,13 +26,15 @@
 
     
     {% block javascripts %}
-    {% do assets.add('jquery',101) %}
-    {% do assets.addJs('theme://assets/js/skel.min.js') %}
-    {% do assets.addJs('theme://assets/js/util.js') %}
-    {% do assets.addJs('theme://assets/js/main.js') %}
+    {# {% do assets.add('jquery',101) %} #}
+    {# {% do assets.addJs('theme://assets/js/skel.min.js') %} #}
+    {# {% do assets.addJs('theme://assets/js/util.js') %} #}
+    {# {% do assets.addJs('theme://assets/js/main.js') %} #}
     {% endblock %}
     {{ assets.js() }}
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/dracula.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
 
     {% if site.calendar %}
@@ -148,8 +150,21 @@
         {% endblock %}
     </body>
     <script>
-        $(document).ready(function() {
-            $(".loader").fadeOut("slow");
-        })
+        function fade(element) {
+            var op = 1;  // initial opacity
+            var timer = setInterval(function () {
+                if (op <= 0.1){
+                    clearInterval(timer);
+                    element.style.display = 'none';
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op -= op * 0.1;
+            }, 50);
+        }
+        document.addEventListener("DOMContentLoaded", function(event) { 
+             let loader = document.querySelector(".loader")
+             fade(loader);
+        });
     </script>
 </html>
