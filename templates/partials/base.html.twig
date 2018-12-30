@@ -55,6 +55,8 @@
     {% endif %}
     {% include 'partials/seo_data.html.twig' %}
     {% endblock head%}
+
+
 </head>
     <body>
         <div id="wrapper">
@@ -143,12 +145,18 @@
             }
         </script>
 
+
         {% endif %}
 
         {% block bottom %}
         {{ assets.js('bottom') }}
         {% endblock %}
     </body>
+
+
+    {% do assets.addJs('theme://assets/js/index.min.js') %}
+
+    {{ assets.js() }}
     <script>
         function fade(element) {
             var op = 1;  // initial opacity
