@@ -44,3 +44,15 @@
         // Just load all the images
         Array.from(images).forEach(image => loadImage(image));
     }
+
+    console.log(`
+                         ~~~~~
+                        ( o o )
++------------------.oooO--(_)--Oooo.------------------+
+|     let's                                           |
+|     work           .oooO        github.io/harps116  |
+|     together!      (   )   Oooo.                    |
++---------------------\ (----(   )--------------------+
+                       \_)    ) /
+                             (_/
+    `);
