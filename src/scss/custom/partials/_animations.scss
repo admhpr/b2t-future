@@ -18,3 +18,24 @@
     z-index: 9999;
     background: url('../../images/loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
 }
+
+.tag-line {
+    position: relative;
+
+    .text-wrapper {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        width: 80%;
+        font-size: 1.75em;
+        font-family: 'Caveat', cursive;
+    }
+
+}
+
+.tag-line {
+    .letter {
+        transform-origin: 50% 100%;
+        display: inline-block;
+    }
+}
