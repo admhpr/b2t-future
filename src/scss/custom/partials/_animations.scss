@@ -22,7 +22,6 @@
 
 .tag-line {
   position: relative;
-
   .text-wrapper {
     position: relative;
     display: inline-block;
@@ -30,12 +29,15 @@
     width: 80%;
     font-size: 1.75em;
     font-family: "Caveat", cursive;
-    overflow-wrap: break-word;
   }
 }
 
+.letters {
+  display: flex;
+}
 .tag-line {
   .letter {
     transform-origin: 50% 100%;
+    display: inline-block;
   }
 }
