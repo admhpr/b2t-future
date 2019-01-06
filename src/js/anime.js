@@ -4,7 +4,7 @@ $('.tag-line .letters').each(function () {
 });
 
 anime.timeline({
-        loop: true
+        loop: false
     })
     .add({
         targets: '.tag-line .letter',
