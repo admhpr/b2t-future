@@ -10,7 +10,7 @@ anime.timeline({
         targets: '.tag-line .letter',
         scale: [0, 1],
         duration: 3000,
-        elasticity: 600,
+        elasticity: 2000,
         delay: function (el, i) {
             return 45 * (i + 1)
         }
