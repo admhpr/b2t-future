@@ -1,6 +1,6 @@
 # Future Theme for Grav
 
-![Back-T0-TheFuture](screenshot.jpg)
+![Back-T0-The-Future](screenshot.jpg)
 
 Future Imperfect by [HTML5UP](http://www.html5up.net), features a clean, minimalistic design, styling for all basic page elements and HTML5/CSS3 code designed for quick and easy customization.
 
