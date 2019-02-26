@@ -5,8 +5,8 @@
 }
 
 body {
-  background-image: url(../../images/ah_site.png);
-  background-size: 23%;
+  background-image: url(../../images/bg.png);
+  background-size: 100%;
   margin: auto;
   width: 100%;
 }
@@ -78,7 +78,7 @@ body {
   text-align: center;
 }
 
-.post > header {
+.post>header {
   left: 0em;
   padding: 1em;
   width: 100%;
@@ -128,7 +128,7 @@ body {
     width: 100%;
   }
 
-  .post > header .meta > :first-child {
+  .post>header .meta> :first-child {
     display: block;
     margin: 0 auto;
   }
