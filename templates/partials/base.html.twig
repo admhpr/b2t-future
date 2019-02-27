@@ -35,7 +35,6 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/dracula.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
 
     {% if site.calendar %}
@@ -154,7 +153,7 @@
         {% endblock %}
     </body>
 
-
+    {% do assets.addJs('theme://assets/js/anime.min.js') %}
     {% do assets.addJs('theme://assets/js/index.min.js') %}
 
     {{ assets.js() }}
@@ -171,9 +170,9 @@
                 op -= op * 0.1;
             }, 50);
         }
-        document.addEventListener("DOMContentLoaded", function(event) { 
-             let loader = document.querySelector(".loader")
-             fade(loader);
-        });
+        setTimeout(() => {
+            let loader = document.querySelector(".loader")
+            fade(loader);
+        },600);
     </script>
 </html>
