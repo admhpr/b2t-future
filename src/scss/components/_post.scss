@@ -15,7 +15,7 @@
 
 	>header {
 		@include vendor('display', 'flex');
-		border-bottom: solid 1px _palette(border);
+		border-bottom: solid 3px _palette(accent-1);
 		left: (_size(section-spacing) * -1);
 		margin: (_size(section-spacing) * -1) 0 _size(section-spacing) 0;
 		position: relative;
@@ -38,7 +38,7 @@
 
 		.meta {
 			@include padding(_size(section-spacing) * 1.25, _size(section-spacing));
-			border-left: solid 1px _palette(border);
+			// border-left: solid 2px _palette(accent-3);
 			min-width: 17em;
 			text-align: right;
 			width: 17em;
