@@ -27,9 +27,6 @@
     
     {% block javascripts %}
     {% do assets.add('jquery',101) %}
-    {# {% do assets.addJs('theme://assets/js/skel.min.js') %} #}
-    {# {% do assets.addJs('theme://assets/js/util.js') %} #}
-    {# {% do assets.addJs('theme://assets/js/main.js') %} #}
     {% endblock %}
     {{ assets.js() }}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/dracula.min.css">
@@ -65,7 +62,7 @@
                 <div class="dropdown">
                     <button onclick="dropdown()" class="dropbtn hidden"><i class="fas fa-bars" aria-hidden="true"></i>
                     </button>
-                    <div id="myDropdown" class="dropdown-content">
+                    <div id="navDropdown" class="dropdown-content">
                         <a href="/blog">Blog</a>
                         <a href="/notes">Notes</a>
                         <!-- <a href="/about">About</a> -->
@@ -126,9 +123,8 @@
             /* When the user clicks on the button,
             toggle between hiding and showing the dropdown content */
             function dropdown() {
-                document.getElementById("myDropdown").classList.toggle("show");
+                document.getElementById("navDropdown").classList.toggle("show");
             }
-
             // Close the dropdown menu if the user clicks outside of it
             window.onclick = function (event) {
                 if (!event.target.matches('.dropbtn')) {
