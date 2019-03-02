@@ -1,3 +1,4 @@
+(function () {
     const options = {
         rootMargin: '0px',
         threshold: 0.6
@@ -40,7 +41,7 @@
             observer.observe(img);
         })
     } else {
-        // IO is not supported.
+        // IntersectionObserver is not supported.
         // Just load all the images
         Array.from(images).forEach(image => loadImage(image));
     }
@@ -56,3 +57,5 @@
                        \_)    ) /
                              (_/
     `);
+
+}(window));
