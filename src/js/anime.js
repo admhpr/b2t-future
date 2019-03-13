@@ -13,8 +13,8 @@
       targets: [".text-wrapper .letter"],
       translateX: [-40, 0],
       direction: "linear",
-      duration: 1800,
-      delay: anime.stagger(23)
+      duration: 100,
+      delay: anime.stagger(50)
     });
   }
   fireAnimation();
